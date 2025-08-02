@@ -8,13 +8,13 @@ import { getFirestore, collection, doc, getDoc, getDocs, query, where } from "fi
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDnnAR5drCzJ9tKOHE9y0ydygr4vPs7_iE",
-  authDomain: "ebiddlegame.firebaseapp.com",
-  projectId: "ebiddlegame",
-  storageBucket: "ebiddlegame.firebasestorage.app",
-  messagingSenderId: "480005084268",
-  appId: "1:480005084268:web:b112b1b2eaab63d266b449",
-  measurementId: "G-CRG43HMK58"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
