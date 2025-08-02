@@ -34,7 +34,7 @@ FIREBASE_APP_ID=your_app_id
 - **Never hardcode API keys or tokens** in your source code
 - The `.gitignore` file is configured to exclude sensitive files
 
-## 🎮 Features
+## Features
 
 - **10 Rounds**: Play 10 rounds per game with fresh items each round
 - **8 Categories**: Electronics, Fashion, Home & Garden, Sports & Outdoors, Toys & Hobbies, Books & Media, Automotive, Jewelry & Watches
@@ -45,7 +45,7 @@ FIREBASE_APP_ID=your_app_id
 - **Image Gallery**: Multiple images per listing with navigation
 - **Mobile Responsive**: Works on all devices
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React 19, Create React App
 - **Backend**: Firebase Functions (Gen 2), Express.js
@@ -54,7 +54,7 @@ FIREBASE_APP_ID=your_app_id
 - **Caching**: Node-cache for API responses
 - **Styling**: CSS3 with custom eBay-inspired design
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js 18+ 
@@ -88,7 +88,7 @@ FIREBASE_APP_ID=your_app_id
    firebase deploy
    ```
 
-## 🎯 How to Play
+## How to Play
 
 1. **Choose a Category**: Select from 8 categories or try General mode
 2. **Guess Prices**: Enter your price guess for each eBay item
@@ -96,14 +96,14 @@ FIREBASE_APP_ID=your_app_id
 4. **Score Points**: Earn points based on accuracy
 5. **Complete 10 Rounds**: Try to get the highest total score
 
-## 📊 API Usage
+## API Usage
 
 - **Regular Categories**: ~11 eBay API calls per category
 - **General Category**: ~24-28 eBay API calls (spread across all categories)
 - **Caching**: 24-hour cache per category
 - **Rate Limiting**: Built-in delays to respect eBay API limits
 
-## 🔧 Development
+## Development
 
 ### Available Scripts
 
@@ -131,35 +131,35 @@ functions/
 └── index.js            # Firebase Functions (API endpoints)
 ```
 
-## 📈 Performance
+## Performance
 
 - **Frontend**: Optimized React components with proper state management
 - **Backend**: Efficient caching and rate limiting
 - **Images**: Proxy service to avoid tracking protection
 - **Mobile**: Responsive design with touch-friendly controls
 
-## 🔒 Privacy & Security
+## Privacy & Security
 
 - **Privacy Policy**: Comprehensive privacy policy included
 - **Data Storage**: Minimal data collection, local browser storage
 - **API Security**: Secure eBay API integration with OAuth
 - **HTTPS**: All communications encrypted
 
-## 🎨 Design Features
+## Design Features
 
 - **eBay-Inspired UI**: Authentic eBay-like interface
 - **Responsive Design**: Works on desktop, tablet, and mobile
 - **Smooth Animations**: CSS transitions and hover effects
 - **Accessibility**: Keyboard navigation and screen reader support
 
-## 📱 Browser Support
+## Browser Support
 
 - Chrome 90+
 - Firefox 88+
 - Safari 14+
 - Edge 90+
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -167,14 +167,8 @@ functions/
 4. Test thoroughly
 5. Submit a pull request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
-## 🆘 Support
-
-For support, email: support@playebiddle.com
-
 ---
-
-**Made with ❤️ for eBay enthusiasts and price guessing fans!**
