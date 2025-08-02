@@ -1,0 +1,36 @@
+.product-images-section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  min-width: 0;
+  height: 100%;
+  flex: 1 1 0%;
+}
+
+.item-display {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  height: 100%;
+  flex: 1 1 0%;
+}
+
+.item-details {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .item-details h2 {
+    font-size: 1.1rem;
+    margin: 4px 0 4px 0;
+  }
+  .item-details {
+    padding: 4px 0;
+    margin: 0;
+  }
+}

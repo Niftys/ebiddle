@@ -2,19 +2,70 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico?v=3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#3665f3" />
+    
+    <!-- Primary Meta Tags -->
+    <title>eBiddle - Guess eBay Auction Prices</title>
+    <meta name="title" content="eBiddle - Guess eBay Auction Prices" />
+    <meta name="description" content="Play eBiddle daily! Fresh eBay auction listings refresh every day. Test your pricing intuition with real eBay auctions across 8 categories. Challenge your friends daily and see who has the best market sense. Free to play!" />
+    <meta name="keywords" content="eBay, price guessing, auction game, market intuition, pricing game, eBay auctions, price prediction, bidding game, daily game, fresh listings" />
+    <meta name="author" content="eBiddle" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ebiddlegame.com/" />
+    <meta property="og:title" content="eBiddle - Guess eBay Auction Prices" />
+    <meta property="og:description" content="Play eBiddle daily! Fresh eBay auction listings refresh every day. Test your pricing intuition with real eBay auctions across 8 categories. Challenge your friends daily and see who has the best market sense. Free to play!" />
+    <meta property="og:image" content="%PUBLIC_URL%/preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="eBiddle" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ebiddlegame.com/" />
+    <meta property="twitter:title" content="eBiddle - Guess eBay Auction Prices" />
+    <meta property="twitter:description" content="Play eBiddle daily! Fresh eBay auction listings refresh every day. Test your pricing intuition with real eBay auctions across 8 categories. Challenge your friends daily and see who has the best market sense. Free to play!" />
+    <meta property="twitter:image" content="%PUBLIC_URL%/preview.png" />
+    
+    <!-- Additional Meta Tags -->
+    <meta name="application-name" content="eBiddle" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="eBiddle" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="msapplication-TileColor" content="#3665f3" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    
+    <!-- Icons -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg" color="#3665f3" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://api.ebay.com" />
+    <link rel="preconnect" href="https://i.ebayimg.com" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "eBiddle",
+      "url": "https://ebiddlegame.com/",
+      "description": "Guess the final prices of real eBay auctions across 8 categories. Challenge your friends daily!"
+    }
+    </script>
+    
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -24,7 +75,6 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

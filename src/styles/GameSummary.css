@@ -1,0 +1,326 @@
+.game-summary-container {
+    max-width: 800px;
+    margin: 24px auto;
+    padding: 0 16px;
+  }
+  
+  .summary-header {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .completion-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #eaf6ff;
+    color: #3665f3;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    border: 1px solid #bae6fd;
+  }
+  
+  .completion-icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .summary-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+    line-height: 1.2;
+  }
+  
+  .main-score-card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px 32px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid #e1e5e9;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  
+  .score-display {
+    margin-bottom: 32px;
+  }
+  
+  .score-label {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .score-value {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #3665f3;
+    line-height: 1;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 4px rgba(54, 101, 243, 0.1);
+  }
+  
+  .score-max {
+    font-size: 1rem;
+    color: #888;
+    font-weight: 500;
+  }
+  
+  .performance-badge {
+    border-radius: 12px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+  
+  .performance-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .performance-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+  
+  .performance-text {
+    text-align: left;
+  }
+  
+  .performance-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+  
+  .performance-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.4;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  
+  .stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border: 1px solid #e1e5e9;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #eaf6ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3665f3;
+    flex-shrink: 0;
+  }
+  
+  .stat-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .stat-content {
+    flex: 1;
+  }
+  
+  .stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #222;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+  }
+  
+  .round-breakdown-section {
+    background: white;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border: 1px solid #e1e5e9;
+    margin-bottom: 32px;
+  }
+  
+  .breakdown-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  
+  .rounds-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Always 5 columns */
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 600px) {
+    .rounds-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+    }
+  }
+  
+  .round-card {
+    background: #f8f9fa;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    padding: 16px 12px;
+    text-align: center;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .round-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .round-card.best-round {
+    background: linear-gradient(135deg, #fff8dc, #ffd700);
+    border-color: #ffd700;
+    transform: scale(1.05);
+  }
+  
+  .round-card.worst-round {
+    background: linear-gradient(135deg, #fff5f5, #fecaca);
+    border-color: #f87171;
+    transform: scale(1.02);
+  }
+  
+  .round-card.failed-round {
+    background: #fff0f0;
+    border-color: #fecaca;
+    opacity: 0.7;
+  }
+  
+  .round-number {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .round-score {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3665f3;
+    line-height: 1.2;
+  }
+  
+  .round-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: #ffd700;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  }
+  
+  .round-badge.worst {
+    color: #f87171;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  
+  .share-button, .restart-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 160px;
+    justify-content: center;
+  }
+  
+  .share-button {
+    background: linear-gradient(135deg, #10b981, #3665f3);
+    color: white;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  }
+  
+  .share-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+  }
+  
+  .restart-button {
+    background: linear-gradient(135deg, #3665f3, #2563eb);
+    color: white;
+    box-shadow: 0 4px 12px rgba(54, 101, 243, 0.3);
+  }
+  
+  .restart-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(54, 101, 243, 0.4);
+  }
+  
+  .button-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .summary-footer {
+    text-align: center;
+    padding: 24px;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .summary-footer p {
+    margin: 0;
+  }

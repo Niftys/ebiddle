@@ -1,0 +1,223 @@
+.image-gallery {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 24px;
+  align-items: stretch;
+  max-height: 600px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.thumbnails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  max-height: 600px;
+  overflow-y: auto;
+  padding: 8px 0;
+  scrollbar-width: none;
+}
+
+.thumbnails::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent;
+  display: none;
+}
+
+.thumb {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  background: #fff;
+}
+
+.thumb.selected {
+  border: 2px solid #3665f3;
+  box-shadow: 0 2px 8px rgba(54,101,243,0.10);
+}
+
+.main-image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  height: 600px;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  margin-left: 24px;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 16px;
+  background: white;
+  border: none;
+  box-shadow: none;
+  display: block;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(1);
+  transform-origin: center;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(54,101,243,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+  opacity: 0.92;
+  padding: 0;
+  /* Prevent text selection and improve touch targets */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Ensure proper touch handling */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.arrow.left {
+  left: 16px;
+  background-color: #eee;
+}
+
+.arrow.right {
+  right: 16px;
+  background-color: #eee;
+}
+
+/* Desktop hover effects */
+@media (hover: hover) {
+  .arrow:hover {
+    background: #a0a0a0;
+    transform: translateY(-50%) scale(1.05);
+  }
+}
+
+/* Touch/active state for all devices */
+.arrow:active {
+  background: #888;
+  transform: translateY(-50%) scale(0.95);
+}
+
+.gallery-chevron {
+  color: #222;
+  width: 1em;
+  height: 1em;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .image-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    padding-top: 10px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .thumbnails {
+    display: none !important;
+  }
+  .main-image-container {
+    width: 100vw;
+    height: 100vw;
+    min-width: 0;
+    min-height: 0;
+    max-width: 100%;
+    max-height: 70vw;
+    border-radius: 10px;
+    background: white;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    overflow: hidden;
+  }
+  .main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    background: white;
+    border: none;
+    box-shadow: none;
+    display: block;
+  }
+  .arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+    left: 8px;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%) scale(1);
+    transform-origin: center;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(54,101,243,0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.92;
+    z-index: 2;
+    padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+  }
+  .arrow.left {
+    left: 12px;
+    right: auto;
+  }
+  .arrow.right {
+    right: 12px;
+    left: auto;
+  }
+  .arrow:hover {
+    background: #a0a0a0;
+    transform: translateY(-50%) scale(1.05);
+  }
+  .arrow:active {
+    background: #888;
+    transform: translateY(-50%) scale(0.95);
+  }
+  .gallery-chevron {
+    color: #222;
+    width: 1.2em;
+    height: 1.2em;
+    display: block;
+  }
+}

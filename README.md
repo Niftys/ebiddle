@@ -1,70 +1,180 @@
-# Getting Started with Create React App
+# eBay Price Guesser
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based game where users guess the final selling price of eBay items.
 
-## Available Scripts
+## Security Setup
 
-In the project directory, you can run:
+⚠️ **IMPORTANT**: Before running this project, you must set up the required environment variables to avoid exposing sensitive credentials.
 
-### `npm start`
+### Required Environment Variables
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Create a `.env` file in the root directory with the following variables:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+# eBay API Credentials
+EBAY_APP_ID=your_ebay_app_id
+EBAY_CERT_ID=your_ebay_cert_id
 
-### `npm test`
+# Cache Reset Token (for daily refresh functionality)
+CACHE_RESET_TOKEN=your_secure_token_here
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Firebase Configuration (if using Firebase)
+FIREBASE_API_KEY=your_firebase_api_key
+FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+FIREBASE_PROJECT_ID=your_project_id
+FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+FIREBASE_APP_ID=your_app_id
+```
 
-### `npm run build`
+### Security Notes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Never commit `.env` files** to version control
+- **Never commit Firebase service account keys** to version control
+- **Never hardcode API keys or tokens** in your source code
+- The `.gitignore` file is configured to exclude sensitive files
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🎮 Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **10 Rounds**: Play 10 rounds per game with fresh items each round
+- **8 Categories**: Electronics, Fashion, Home & Garden, Sports & Outdoors, Toys & Hobbies, Books & Media, Automotive, Jewelry & Watches
+- **General Mode**: Random items from all categories
+- **Real eBay Data**: Uses actual sold eBay listings via eBay Browse API
+- **Daily Refresh**: New listings every day
+- **Score Tracking**: Track your performance across rounds
+- **Image Gallery**: Multiple images per listing with navigation
+- **Mobile Responsive**: Works on all devices
 
-### `npm run eject`
+## 🛠️ Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Frontend**: React 19, Create React App
+- **Backend**: Firebase Functions (Gen 2), Express.js
+- **APIs**: eBay Browse API, eBay OAuth
+- **Hosting**: Firebase Hosting
+- **Caching**: Node-cache for API responses
+- **Styling**: CSS3 with custom eBay-inspired design
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
+- Node.js 18+ 
+- Firebase CLI
+- eBay Developer Account
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Installation
 
-## Learn More
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd ebay-price-guesser
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. **Install dependencies**
+   ```bash
+   npm install
+   cd functions && npm install
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. **Set up environment variables**
+   Create a `.env` file in the functions directory:
+   ```
+   EBAY_APP_ID=your_ebay_app_id
+   EBAY_CERT_ID=your_ebay_cert_id
+   EBAY_VERIFICATION_TOKEN=your_verification_token
+   ```
 
-### Code Splitting
+4. **Deploy to Firebase**
+   ```bash
+   firebase deploy
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🎯 How to Play
 
-### Analyzing the Bundle Size
+1. **Choose a Category**: Select from 8 categories or try General mode
+2. **Guess Prices**: Enter your price guess for each eBay item
+3. **Get Feedback**: See how close your guess was and get hints
+4. **Score Points**: Earn points based on accuracy
+5. **Complete 10 Rounds**: Try to get the highest total score
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📊 API Usage
 
-### Making a Progressive Web App
+- **Regular Categories**: ~11 eBay API calls per category
+- **General Category**: ~24-28 eBay API calls (spread across all categories)
+- **Caching**: 24-hour cache per category
+- **Rate Limiting**: Built-in delays to respect eBay API limits
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🔧 Development
 
-### Advanced Configuration
+### Available Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- `npm start` - Run development server
+- `npm run build` - Build for production
+- `npm test` - Run tests
+- `firebase deploy` - Deploy to Firebase
 
-### Deployment
+### Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+src/
+├── components/          # React components
+│   ├── GameControls.js  # Game input and controls
+│   ├── GameSummary.js   # End-game summary
+│   ├── ImageGallery.js  # Image carousel
+│   └── ItemDisplay.js   # Item display component
+├── styles/              # CSS files
+├── utils/               # Utility functions
+│   └── feedbackUtils.js # Scoring and feedback logic
+├── App.js              # Main application component
+└── firebase.js         # Firebase configuration
 
-### `npm run build` fails to minify
+functions/
+└── index.js            # Firebase Functions (API endpoints)
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📈 Performance
+
+- **Frontend**: Optimized React components with proper state management
+- **Backend**: Efficient caching and rate limiting
+- **Images**: Proxy service to avoid tracking protection
+- **Mobile**: Responsive design with touch-friendly controls
+
+## 🔒 Privacy & Security
+
+- **Privacy Policy**: Comprehensive privacy policy included
+- **Data Storage**: Minimal data collection, local browser storage
+- **API Security**: Secure eBay API integration with OAuth
+- **HTTPS**: All communications encrypted
+
+## 🎨 Design Features
+
+- **eBay-Inspired UI**: Authentic eBay-like interface
+- **Responsive Design**: Works on desktop, tablet, and mobile
+- **Smooth Animations**: CSS transitions and hover effects
+- **Accessibility**: Keyboard navigation and screen reader support
+
+## 📱 Browser Support
+
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🆘 Support
+
+For support, email: support@playebiddle.com
+
+---
+
+**Made with ❤️ for eBay enthusiasts and price guessing fans!**

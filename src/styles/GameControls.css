@@ -1,0 +1,381 @@
+.game-controls {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .playing-state {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .guess-instruction {
+    background: #eaf6ff;
+    border: 1px solid #bae6fd;
+    border-radius: 6px;
+    padding: 12px 16px;
+    color: #0369a1;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+  
+  .guess-instruction p {
+    margin-bottom: 6px;
+  }
+  
+  .guess-instruction p:last-child {
+    margin-bottom: 0;
+    font-weight: 600;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+    background: #fff;
+  }
+  
+  .input-group:focus-within {
+    border-color: #3665f3;
+    box-shadow: 0 0 0 2px #eaf6ff;
+  }
+  
+  .currency {
+    background: #f3f6fa;
+    padding: 14px 16px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #374151;
+    border-right: 1px solid #d1d5db;
+  }
+  
+  input[type="number"],
+  input[type="text"] {
+    flex: 1;
+    padding: 14px 16px;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    background: transparent;
+  }
+  
+  input[type="number"]::placeholder,
+  input[type="text"]::placeholder {
+    color: #9ca3af;
+  }
+  
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  
+  .error-input {
+    border-color: #e53935 !important;
+  }
+  
+  button {
+    background: #3665f3;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  button:hover {
+    background: #2951d1;
+    transform: translateY(-1px);
+  }
+  
+  .error {
+    color: #e53935;
+    font-size: 0.9rem;
+    margin-top: 8px;
+    background: #fff0f0;
+    border-radius: 4px;
+    padding: 6px 12px;
+  }
+  
+  .rounded-preview {
+    background: #e8f5e9;
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+    padding: 10px 16px;
+    color: #166534;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 8px;
+  }
+  
+  .feedback {
+    text-align: center;
+    padding: 16px;
+    border-radius: 8px;
+    background: #fff;
+    border: 2px solid #e5e7eb;
+    margin-top: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  
+  .feedback-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    transition: color 0.5s;
+  }
+  
+  .proximity-indicator {
+    width: 100%;
+    height: 12px;
+    background: #f3f4f6;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .proximity-bar {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .game-result {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #e0f7fa 0%, #e8f5e9 100%);
+    border-radius: 8px;
+    border: 1px solid #bbf7d0;
+    margin-bottom: 20px;
+  }
+  
+  .game-result h2 {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    color: #166534;
+  }
+  
+  .game-result button {
+    background: #10b981;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    margin-top: 12px;
+  }
+  
+  .game-result button:hover {
+    background: #059669;
+  }
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes shake-small {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-3px); }
+  40% { transform: translateX(3px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+@keyframes shake-medium {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-7px); }
+  40% { transform: translateX(7px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+@keyframes shake-big {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-14px); }
+  40% { transform: translateX(14px); }
+  60% { transform: translateX(-8px); }
+  80% { transform: translateX(8px); }
+  100% { transform: translateX(0); }
+}
+
+.shake-small {
+  animation: shake-small 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+.shake-medium {
+  animation: shake-medium 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+.shake-big {
+  animation: shake-big 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+/* NumberPad styles */
+.number-pad {
+  display: none;
+}
+@media (max-width: 600px) {
+  .number-pad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 480px;
+    min-width: 280px;
+    margin: 8px auto 0 auto;
+    padding: 20px 16px 16px 16px;
+    border-radius: 20px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    transition: background 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+  .number-pad-row {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 16px;
+    gap: 16px;
+  }
+  .number-pad-row:last-child {
+    margin-bottom: 0;
+  }
+  .number-pad button {
+    flex: 1 1 0;
+    min-width: 0;
+    width: 80px;
+    height: 80px;
+    max-width: 110px;
+    max-height: 80px;
+    font-size: 1.8rem;
+    border-radius: 16px;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    color: #374151;
+    font-weight: 600;
+    margin: 0;
+    transition: background 0.2s, border 0.2s;
+    box-sizing: border-box;
+    outline: none;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .number-pad button:active {
+    background: #f3f4f6;
+    border: 1px solid #9ca3af;
+  }
+  .number-pad-row:last-child button {
+    font-size: 1.4rem;
+    height: 80px;
+    width: 80px;
+    max-width: 110px;
+    max-height: 80px;
+  }
+  /* Fix Bid button alignment in input group */
+  .input-group button {
+    height: 64px;
+    min-width: 80px;
+    font-size: 1.1rem;
+    border-radius: 0 12px 12px 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .input-group {
+    height: 64px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  .currency {
+    display: none;
+  }
+  .input-group input[type="text"] {
+    padding: 14px 16px;
+    font-size: 1.1rem;
+  }
+  .input-group button {
+    height: 64px;
+    min-width: 80px;
+    font-size: 1.1rem;
+    border-radius: 0 12px 12px 0;
+  }
+  .number-pad {
+    max-width: 400px;
+    padding: 16px 12px;
+  }
+  .number-pad-row {
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+  .number-pad button {
+    width: 70px;
+    height: 70px;
+    max-width: 95px;
+    max-height: 70px;
+    font-size: 1.6rem;
+    border-radius: 14px;
+  }
+  .number-pad-row:last-child button {
+    font-size: 1.3rem;
+    height: 70px;
+    width: 70px;
+    max-width: 95px;
+    max-height: 70px;
+  }
+  .error {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin: 2px auto 0 auto;
+    width: 90%;
+    font-size: 0.85rem;
+    padding: 4px 6px;
+    z-index: 2;
+    text-align: center;
+  }
+  .flash-green {
+    background: #d1fae5 !important;
+    transition: background 0.25s cubic-bezier(0.4,0,0.2,1);
+  }
+  .flash-yellow {
+    background: #fef9c3 !important;
+    transition: background 0.25s cubic-bezier(0.4,0,0.2,1);
+  }
+  .flash-red {
+    background: #fee2e2 !important;
+    transition: background 0.25s cubic-bezier(0.4,0,0.2,1);
+  }
+}
+
+/* Feedback above input on mobile */
+@media (max-width: 600px) {
+  .mobile-feedback {
+    margin-bottom: 12px;
+    margin-top: 0;
+  }
+}

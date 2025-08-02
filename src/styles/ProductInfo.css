@@ -1,0 +1,158 @@
+.product-info-section {
+    min-width: 0;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .product-details {
+    border-bottom: 1px solid #e1e5e9;
+    padding-bottom: 16px;
+  }
+  
+  .product-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  
+  .seller-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .seller-avatar {
+    width: 40px;
+    height: 40px;
+    background: #3665f3;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .seller-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .seller-name {
+    font-weight: 600;
+    color: #3665f3;
+    cursor: pointer;
+  }
+  
+  .seller-feedback {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .seller-links {
+    font-size: 0.8rem;
+    color: #666;
+  }
+  
+  .seller-links a {
+    color: #161616;
+    text-decoration: underline;
+  }
+  
+  .seller-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Bidding Section */
+  .bidding-section {
+    margin-bottom: 16px;
+    width: 100%;
+  }
+  
+  .price-info {
+    margin-bottom: 20px;
+  }
+  
+  .current-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 4px;
+  }
+  
+  .price-usd {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  
+  .bid-info {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  
+  .time-left {
+    font-size: 0.9rem;
+    color: #e53935;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .condition {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 16px;
+  }
+  
+  .engagement-metric {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e1e5e9;
+  }
+  
+  /* Shipping Info */
+  .shipping-info {
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    padding: 16px;
+    background: #fafbfc;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .shipping-details {
+    margin-bottom: 12px;
+  }
+  
+  .shipping-details a {
+    color: #3665f3;
+    text-decoration: none;
+  }
+  
+  .shipping-details a:hover {
+    text-decoration: underline;
+  }
+  
+  .international-note, .location, .delivery, .returns {
+    margin-bottom: 8px;
+  }
+  
+  .returns a {
+    color: #3665f3;
+    text-decoration: none;
+  }
+  
+  .returns a:hover {
+    text-decoration: underline;
+  }

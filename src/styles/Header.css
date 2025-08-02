@@ -1,0 +1,188 @@
+.ebay-header {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #e1e5e9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .top-nav {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f7f7f7;
+    border-bottom: 1px solid #e1e5e9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #666;
+    padding: 0 32px;
+    min-height: 36px;
+    box-sizing: border-box;
+  }
+
+  .top-nav-content {
+    width: 90vw;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+    min-height: 36px;
+    box-sizing: border-box;
+  }
+  
+  .nav-left, .nav-right {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+  }
+  
+  .nav-left span, .nav-right span {
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .nav-left span:hover, .nav-right span:hover {
+    color: #3665f3;
+  }
+  
+  .icon {
+    width: auto;
+    height: auto;
+    stroke: #2563eb;
+    vertical-align: middle;
+    padding-top: 2px; /* Adjust as needed */
+  }
+  
+  .main-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px 32px 12px 32px;
+    gap: 32px;
+    background: #fff;
+    box-sizing: border-box;
+  }
+  
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 200px;
+  }
+  
+  .logo-placeholder {
+    font-size: 2.1rem;
+    font-weight: bold;
+    color: #3665f3;
+    background: none;
+    padding: 0;
+    border: none;
+  }
+  
+  .shop-category {
+    font-size: 1rem;
+    color: #222;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .search-section {
+    flex: 1 1 0%;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .search-area-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-width: 0;
+  }
+  
+  .search-bar {
+    flex: 1 1 0%;
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 24px;
+    border: 1.5px solid #b1b1b1;
+    box-shadow: none;
+    padding-right: 0;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 14px 18px;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    background: transparent;
+    border-radius: 24px;
+  }
+  
+  .search-dropdown {
+    background: #fff;
+    border-left: 1px solid #e1e5e9;
+    padding: 0 18px;
+    font-size: 1rem;
+    color: #222;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 0 24px 24px 0;
+  }
+  
+  .search-button {
+    background: #fff;
+    color: #3665f3;
+    border: 1px solid #3665f3;
+    border-radius: 24px;
+    padding: 0 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    height: 48px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: none;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+  
+  .search-button:hover {
+    background: #f3f3f3;
+    border: 1px solid #3665f3;
+  }
+  
+  .advanced-link {
+    color: #727272;
+    cursor: pointer;
+    font-size: 1rem;
+    white-space: nowrap;
+    margin-left: 0;
+    padding-left: 8px;
+    align-self: center;
+  }
+  
+  .new-tag {
+    background: #10b981;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+  }

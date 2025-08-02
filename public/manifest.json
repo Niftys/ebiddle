@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "eBiddle",
+  "name": "eBiddle - eBay Price Guessing Game",
+  "description": "Guess the final prices of real eBay auctions across 8 categories. Challenge your friends daily!",
   "icons": [
     {
       "src": "favicon.ico",
@@ -16,10 +17,53 @@
       "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#3665f3",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": ["games", "entertainment", "education"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "shortcuts": [
+    {
+      "name": "Play General",
+      "short_name": "General",
+      "description": "Play with random items from all categories",
+      "url": "/?category=general",
+      "icons": [
+        {
+          "src": "logo192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Play Electronics",
+      "short_name": "Electronics",
+      "description": "Play with electronics items",
+      "url": "/?category=electronics",
+      "icons": [
+        {
+          "src": "logo192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
 }
